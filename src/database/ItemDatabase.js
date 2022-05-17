@@ -25,7 +25,7 @@ export default class ItemDatabase {
                             console.log("Erro Recebido: ", error);
                             console.log("O Banco de dados não está pronto ... Criando Dados");
                             db.transaction((tx) => {
-                                tx.executeSql('CREATE TABLE IF NOT EXISTS Item (id INTEGER PRIMARY KEY AUTOINCREMENT, nome varchar(80), nota INTEGER, opiniao varchar(200))');
+                                tx.executeSql('CREATE TABLE IF NOT EXISTS Item (id INTEGER PRIMARY KEY AUTOINCREMENT, nome varchar(80), nota varchar(5), opiniao varchar(200))');
                             }).then(() => {
                                 console.log("Tabela criada com Sucesso");                
                             }).catch(error => {                    
