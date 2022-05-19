@@ -17,7 +17,7 @@ export default class ItemComponente extends Component {
 
 const estilo = StyleSheet.create({
     container:{
-        margin: 4,
+        margin: 5,
         padding: 10,
         backgroundColor: '#ff0062',
         borderRadius: 10
