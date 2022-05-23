@@ -1,10 +1,13 @@
 import React, { Component } from 'react'
 import { View, Text, StyleSheet, TouchableOpacity, ScrollView, TextInput } from 'react-native'
 import { Picker } from '@react-native-picker/picker'
+import { notificationManager } from '../componentes/Notificacao'
 
 import ItemDatabase from '../database/ItemDatabase'
 import Item from '../models/Item'
 import ItemComponente from '../componentes/ItemComponente'
+
+const Notificador = notificationManager
 
 export default class App extends Component {
   constructor(props) {
@@ -16,6 +19,22 @@ export default class App extends Component {
       lista: []
     }
     this.Listar()
+  }
+
+  componentDidMount() {
+    Notificador.configurar()
+    Notificador.criarCanal()
+    Notificador.agendarNotificacao()
+  }
+
+  disparar = () => {
+    Notificador.showNotification(
+      1,
+      "Notificação instantanea",
+      "Mensagem enviada ao clicar no botão de testar notificações",
+      {}, // data
+      {} // options
+    )
   }
 
   Listar = () => {
@@ -31,12 +50,6 @@ export default class App extends Component {
     const itemNovo = new Item(nome, nota, opiniao);
     const banco = new ItemDatabase();
     banco.Inserir(itemNovo)
-    this.Listar()
-  }
-
-  Remover = (id) => {
-    const banco = new ItemDatabase();
-    banco.Remover(id)
     this.Listar()
   }
 

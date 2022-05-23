@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "36659433809",
+    "project_id": "doce-sabor-304f8",
+    "storage_bucket": "doce-sabor-304f8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:36659433809:android:4fa6aa81d3251bf7808370",
+        "android_client_info": {
+          "package_name": "com.projetointegrador"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "36659433809-log8auqtgp7ct9h44qpqoq46p8nobin6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8wKrIwOYJaieciT-A-nZ5mYYoZIP-J50"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "36659433809-log8auqtgp7ct9h44qpqoq46p8nobin6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
