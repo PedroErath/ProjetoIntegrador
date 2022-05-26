@@ -14,7 +14,7 @@ export default class App extends Component {
     super(props)
     this.state = {
       nome: "",
-      nota: "",
+      nota: "5",
       opiniao: "",
       lista: []
     }
@@ -30,8 +30,8 @@ export default class App extends Component {
   disparar = () => {
     Notificador.showNotification(
       1,
-      "Notificação instantanea",
-      "Mensagem enviada ao clicar no botão de testar notificações",
+      "Muito Obrigado ;)",
+      "Seu Feedback foi cadastrado com sucesso",
       {}, // data
       {} // options
     )
@@ -47,10 +47,15 @@ export default class App extends Component {
   }
 
   Cadastrar = (nome, nota, opiniao) => {
+    if (nome == ''){
+      alert('Insira um nome')
+    }else{
     const itemNovo = new Item(nome, nota, opiniao);
     const banco = new ItemDatabase();
     banco.Inserir(itemNovo)
     this.Listar()
+    this.disparar()
+    }
   }
 
   render() {
@@ -66,7 +71,7 @@ export default class App extends Component {
           </View>
           <View style={[estilo.linha, estilo.container]}>
             <Text style={estilo.texto}>Nome:</Text>
-            <TextInput onChangeText={(valorDigitado) => { this.setState({ nome: valorDigitado }) }} style={estilo.EntradaDados}/>
+            <TextInput onChangeText={(valorDigitado) => { this.setState({ nome: valorDigitado }) }} style={estilo.EntradaDados} />
           </View>
           <View style={[estilo.linha, estilo.container]}>
             <Text style={estilo.texto}>Nota:</Text>

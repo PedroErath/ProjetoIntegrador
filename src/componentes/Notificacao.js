@@ -78,7 +78,7 @@ class Notificacao {
             channelId: 'channel-id',
             title: 'Ja deixou seu FEEDBACK?',
             message: "Acesse o App da DOCE SABOR e deixe seu feedback dos nossos doces, caso não tenha provado, peça ja o seu!!!", // (required)
-            date: new Date(Date.now() + 5 * 1000), // in 5s
+            date: new Date(5 * 1000), // in 5s
             allowWhileIdle: false, // (optional) set notification to work while on doze, default: false
             repeatTime: 180 * 1000,
             repeatType: 'time'
