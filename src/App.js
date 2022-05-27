@@ -1,9 +1,11 @@
-import React from 'react'
-import { View} from 'react-native'
-import Feedback from './telas/Feedback'
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import DrawerNavigation from './componentes/DrawerNavigation';
 
-export default props => (
-    <View style={{flex:1,}}>
-        <Feedback />
-    </View>
-)
+export default function App() {
+  return (
+    <NavigationContainer>
+        <DrawerNavigation />
+    </NavigationContainer>
+  );
+}
