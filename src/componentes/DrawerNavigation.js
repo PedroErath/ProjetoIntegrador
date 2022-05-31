@@ -27,6 +27,6 @@ export default props => (
     }}
     initialRouteName='Feedback'>
     <Drawer.Screen name="Feedback" component={Feedback} />
-    <Drawer.Screen name="Links" component={Links} />
+    <Drawer.Screen name="Peça já o Seu" component={Links} />
   </Drawer.Navigator>
 )
