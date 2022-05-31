@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
-import { View, Text, StyleSheet, TouchableOpacity, ScrollView, TextInput } from 'react-native'
+import { View, Text, StyleSheet, TouchableOpacity, ScrollView, TextInput, Button } from 'react-native'
 import { Picker } from '@react-native-picker/picker'
 import { notificationManager } from '../componentes/Notificacao'
+import Icon from 'react-native-vector-icons/Entypo'
 
 import ItemDatabase from '../database/ItemDatabase'
 import Item from '../models/Item'
 import ItemComponente from '../componentes/ItemComponente'
+import { DrawerActions } from '@react-navigation/native'
 
 const Notificador = notificationManager
 
@@ -62,6 +64,9 @@ export default class Feedback extends Component {
     return (
       <ScrollView style={estilo.fundo}>
         <View style={estilo.header}>
+          <TouchableOpacity onPress={() => this.props.navigation.dispatch(DrawerActions.openDrawer()) }>
+            <Icon name="menu" color={'white'} size={40}/>
+          </TouchableOpacity>
           <Text style={estilo.titulo}>D♡CE SAB♡R</Text>
         </View>
         <View>
@@ -124,8 +129,9 @@ export default class Feedback extends Component {
 
 const estilo = StyleSheet.create({
   header: {
+    flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'space-around',
     padding: 20,
     backgroundColor: '#ff0062',
   },
